@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title data-i18n="optionsTitle">IME 守護者設定</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="url(#grad1)"/>
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <h1 data-i18n="popupTitle">IME 守護者</h1>
+    </div>
+    <nav>
+      <a href="#" class="active" data-i18n="optionsProtectedDomains">受保護的網域</a>
+      <a href="#" data-i18n="optionsAbout">關於</a>
+    </nav>
+  </div>
+
+  <main class="content">
+    <div class="header">
+      <h2 data-i18n="optionsHeaderTitle">受保護的網域</h2>
+      <p data-i18n="optionsHeaderDesc">管理在哪些網站中，要防止輸入法選字時因 Enter 鍵而意外送出訊息。</p>
+    </div>
+
+    <div class="card">
+      <form id="add-domain-form" class="add-domain-form">
+        <input type="text" id="domain-input" placeholder="例如 facebook.com 或 *.google.com" data-i18n="optionsInputPlaceholder" required>
+        <button type="submit" class="primary-btn" data-i18n="optionsAddDomain">新增網域</button>
+      </form>
+    </div>
+
+    <div class="card table-card">
+      <div class="table-header">
+        <div class="col" data-i18n="optionsTableDomain">網域 / 規則</div>
+        <div class="col action-col" data-i18n="optionsTableActions">操作</div>
+      </div>
+      <div id="domain-list" class="domain-list">
+        <!-- Domains will be injected here -->
+      </div>
+      <div id="empty-state" class="empty-state hidden">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <p><span data-i18n="optionsEmptyStateTitle">目前沒有受保護的網域。</span><br><span data-i18n="optionsEmptyStateDesc">在上方新增網域以開始使用。</span></p>
+      </div>
+    </div>
+  </main>
+  <script src="i18n.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
